@@ -1,0 +1,9 @@
+$primary: blue;
+
+body {
+  background: $primary;
+}
+
+h1 {
+  color: lighten($primary, 30%);
+}
