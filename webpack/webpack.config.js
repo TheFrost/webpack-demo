@@ -24,7 +24,7 @@ module.exports = ({ mode } = { mode: 'production' }) => {
       },
       plugins: [
         plugins.MiniCssExtractPlugin,
-        plugins.HtmlWebpackPlugin
+        ...plugins.HtmlWebpackPlugin
       ]
     },
     modeConfig(mode)

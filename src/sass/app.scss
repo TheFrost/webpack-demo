@@ -1,9 +1,4 @@
-$primary: blue;
-
-body {
-  background: $primary;
-}
-
-h1 {
-  color: lighten($primary, 30%);
+html, body {
+  font-family: Arial, serif;
+  background-color: #00f;
 }
