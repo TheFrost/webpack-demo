@@ -19,7 +19,8 @@ module.exports = ({ mode } = { mode: 'production' }) => {
           loaders.JSLoader,
           loaders.ESLintLoader,
           loaders.CSSLoader,
-          loaders.PUGLoader
+          loaders.PUGLoader,
+          loaders.FontsLoader
         ]
       },
       plugins: [

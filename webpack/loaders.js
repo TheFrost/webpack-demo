@@ -28,17 +28,17 @@ module.exports = {
     exclude: /node_modules/,
     use: [
       MiniCssExtractPlugin.loader,
-      { 
-        loader: 'css-loader', 
-        options: { importLoaders: 1 } 
-      }, 
-      { 
-         loader: 'postcss-loader', 
-         options: {
-           config: {
-             path: './webpack/'
-           }
-         }
+      {
+        loader: 'css-loader',
+        options: { importLoaders: 1 }
+      },
+      {
+        loader: 'postcss-loader',
+        options: {
+          config: {
+            path: './webpack/'
+          }
+        }
       },
       'sass-loader'
     ]
@@ -54,5 +54,15 @@ module.exports = {
         }
       }
     ]
+  },
+  FontsLoader: {
+    test: /\.(woff(2)?|ttf|eot|svg)(\?v=\d+\.\d+\.\d+)?$/,
+    use: [{
+      loader: 'file-loader',
+      options: {
+        name: '[name].[ext]',
+        outputPath: 'fonts/'
+      }
+    }]
   }
 }
