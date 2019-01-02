@@ -3,7 +3,11 @@ const glob = require('glob-all');
 
 const _HtmlWebpackPlugin = require('html-webpack-plugin');
 const _MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const _PurifyCssPlugin = require('purifycss-webpack');
+const _PurgecssPlugin = require('purgecss-webpack-plugin');
+
+const PATHS = {
+  src: path.join(__dirname, '../src')
+};
 
 module.exports = {
   HtmlWebpackPlugin: [
@@ -15,12 +19,10 @@ module.exports = {
       template: `./src/views/${page}.pug`
     })
   )),
-  MiniCssExtractPlugin: new _MiniCssExtractPlugin(),
-  PurifyCssPlugin: new _PurifyCssPlugin({
-    paths: glob.sync([
-      path.join(__dirname, 'src/views/*.html'),
-      path.join(__dirname, 'src/js/*.js')
-    ]),
-    minimize: true
+  MiniCssExtractPlugin: new _MiniCssExtractPlugin({
+    filename: 'css/[name].css'
+  }),
+  PurgecssPlugin: new _PurgecssPlugin({
+    paths: glob.sync(`${PATHS.src}/**/*`, { nodir: true })
   })
 };

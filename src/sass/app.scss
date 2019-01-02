@@ -1,7 +1,16 @@
-@import '~font-awesome/css/font-awesome.css';
-@import url("https://fonts.googleapis.com/css?family=Montserrat:400,700|Roboto:100,300,400");
+$fa-font-path: '~@fortawesome/fontawesome-free/webfonts';
+@import '~@fortawesome/fontawesome-free/scss/brands';
+@import '~@fortawesome/fontawesome-free/scss/fontawesome';
+
 
 html, body {
-  font-family: Arial, serif;
-  background-color: #00f;
+  font-family: Montserrat, serif;
+  font-size: 16px;
+  background-color: #fff;
+}
+
+button {
+  &.active {
+    background: red;
+  }
 }

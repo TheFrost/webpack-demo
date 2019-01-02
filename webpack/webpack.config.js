@@ -12,7 +12,7 @@ module.exports = ({ mode } = { mode: 'production' }) => {
       entry: './src/js/app.js',
       output: {
         path: path.resolve(__dirname, '../dist'),
-        filename: '[name].bundle.js'
+        filename: 'js/[name].bundle.js'
       },
       module: {
         rules: [
